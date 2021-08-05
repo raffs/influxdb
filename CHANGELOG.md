@@ -58,6 +58,7 @@ This release adds an embedded SQLite database for storing metadata required by t
 1. [21938](https://github.com/influxdata/influxdb/pull/21938): Added route to delete individual secret.
 1. [21958](https://github.com/influxdata/influxdb/pull/21958): Telemetry improvements: Do not record telemetry data for non-existant paths; replace invalid static asset paths with a slug.
 1. [21972](https://github.com/influxdata/influxdb/pull/21972): Added support for notebooks and annotations.
+1. [XXXXX](https://github.com/influxdata/influxdb/pull/XXXXX): Added `--flux-log-enabled` option to `influxd` to show detail logs for flux queries.
 
 ### Bug Fixes
 
