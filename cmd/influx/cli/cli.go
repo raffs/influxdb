@@ -14,6 +14,7 @@ import (
 	"net/url"
 	"os"
 	"os/signal"
+	"path"
 	"path/filepath"
 	"reflect"
 	"runtime"
@@ -149,6 +150,12 @@ func (c *CommandLine) Run() error {
 
 	// Modify precision.
 	c.SetPrecision(c.ClientConfig.Precision)
+
+	// Append the correct path if using a flux query, either via the execute flag
+	// or in the REPL.
+	if c.Type == QueryLanguageFlux {
+		c.URL.Path = path.Join(c.URL.Path, "api/v2/query")
+	}
 
 	if c.Execute != "" {
 		switch c.Type {
