@@ -90,6 +90,14 @@
   expose: true
   lifetime: temporary
 
+- name: Remote Connection Backend
+  description: Enable remote-connection management APIs
+  key: remoteConnectionBackend
+  default: false
+  contact: Edge Team
+  expose: true
+  lifetime: temporary
+
 - name: Replication Stream Backend
   description: Enable replication-stream APIs and underlying synchronization queues
   key: replicationStreamBackend

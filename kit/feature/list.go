@@ -156,6 +156,20 @@ func RefreshSingleCell() BoolFlag {
 	return refreshSingleCell
 }
 
+var remoteConnectionBackend = MakeBoolFlag(
+	"Remote Connection Backend",
+	"remoteConnectionBackend",
+	"Edge Team",
+	false,
+	Temporary,
+	true,
+)
+
+// RemoteConnectionBackend - Enable remote-connection management APIs
+func RemoteConnectionBackend() BoolFlag {
+	return remoteConnectionBackend
+}
+
 var replicationStreamBackend = MakeBoolFlag(
 	"Replication Stream Backend",
 	"replicationStreamBackend",
@@ -182,6 +196,7 @@ var all = []Flag{
 	timeFilterFlags,
 	cursorAtEOF,
 	refreshSingleCell,
+	remoteConnectionBackend,
 	replicationStreamBackend,
 }
 
@@ -197,5 +212,6 @@ var byKey = map[string]Flag{
 	"timeFilterFlags":               timeFilterFlags,
 	"cursorAtEOF":                   cursorAtEOF,
 	"refreshSingleCell":             refreshSingleCell,
+	"remoteConnectionBackend":       remoteConnectionBackend,
 	"replicationStreamBackend":      replicationStreamBackend,
 }
