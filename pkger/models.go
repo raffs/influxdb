@@ -465,6 +465,7 @@ type SummaryBucket struct {
 	Description string `json:"description"`
 	// TODO: return retention rules?
 	RetentionPeriod time.Duration `json:"retentionPeriod"`
+	ShardGroupDuration time.Duration `json:"jsonShardDuration"`
 
 	LabelAssociations []SummaryLabel `json:"labelAssociations"`
 }

@@ -79,7 +79,8 @@ const (
 )
 
 const (
-	fieldBucketRetentionRules = "retentionRules"
+	fieldBucketRetentionRules     = "retentionRules"
+	fieldBucketShardGroupDuration = "shardGroupDuration"
 )
 
 const bucketNameMinLength = 2
@@ -90,6 +91,8 @@ type bucket struct {
 	Description    string
 	RetentionRules retentionRules
 	labels         sortedLabels
+
+	ShardGroupDuration time.Duration
 }
 
 func (b *bucket) summarize() SummaryBucket {
@@ -102,6 +105,7 @@ func (b *bucket) summarize() SummaryBucket {
 		Name:              b.Name(),
 		Description:       b.Description,
 		RetentionPeriod:   b.RetentionRules.RP(),
+		ShardGroupDuration: b.ShardGroupDuration,
 		LabelAssociations: toSummaryLabels(b.labels...),
 	}
 }

@@ -613,6 +613,9 @@ func BucketToObject(name string, bkt influxdb.Bucket) Object {
 	if bkt.RetentionPeriod != 0 {
 		o.Spec[fieldBucketRetentionRules] = retentionRules{newRetentionRule(bkt.RetentionPeriod)}
 	}
+	if bkt.ShardGroupDuration != 0 {
+		o.Spec[fieldBucketShardGroupDuration] = bkt.ShardGroupDuration
+	}
 	return o
 }
 
